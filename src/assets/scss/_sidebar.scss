@@ -1,0 +1,43 @@
+.sidebar-bg {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    left: 0;
+    top: 0;
+    background: #fff;
+    @include touch {
+        display: none;
+    }
+}
+.sidebar {
+    min-width: 12rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    padding-right: 0.5rem;
+    position: sticky;
+    top: 1rem;
+    overflow: auto;
+    max-height: calc(100vh - 2rem);
+    .menu-list {
+        a {
+            @include unselectable;
+            display: flex;
+            position: relative;
+            padding-left: 1rem;
+            .chevron-icon {
+                position: absolute;
+                top: 12px;
+                left: 0;
+            }
+            .menu-text {
+                flex: 1 1 auto;
+            }
+        }
+        ul {
+            display: none;
+            &.is-active {
+                display: block;
+            }
+        }
+    }
+}
